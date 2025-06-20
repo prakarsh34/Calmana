@@ -1,0 +1,469 @@
+/* src/App.css */
+
+/* Basic Reset & Body Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #f8f9fa; /* Lighter, softer background */
+  color: #343a40; /* Slightly darker, softer default text color */
+  line-height: 1.6; /* Improved readability */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Header Styles --- */
+.app-header {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e9ecef; /* Softer border */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Slightly more prominent shadow */
+}
+
+.app-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header .logo {
+  font-weight: 700; /* Bolder logo */
+  font-size: 26px; /* Slightly larger logo */
+  color: #28a745; /* A vibrant yet comforting green */
+}
+
+.app-header .nav-links span {
+  margin-left: 30px; /* Increased spacing */
+  font-weight: 500;
+  color: #6c757d; /* Softer navigation text */
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.app-header .nav-links span:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.app-header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Increased gap */
+  font-weight: 500;
+  color: #495057; /* Softer user info text */
+}
+
+.app-header .user-info .user-avatar {
+  border-radius: 50%;
+  width: 35px; /* Slightly larger avatar */
+  height: 35px;
+  object-fit: cover;
+  border: 2px solid #e9ecef; /* Subtle border around avatar */
+}
+
+/* --- Main Content Area (Sidebar + Dashboard) --- */
+.content-area {
+  display: flex;
+  flex: 1;
+  padding: 30px 20px; /* Increased vertical padding */
+  gap: 30px; /* Increased space between sidebar and main content */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Sidebar Styles --- */
+.app-sidebar {
+  flex: 0 0 280px; /* Slightly wider sidebar */
+  background-color: #ffffff;
+  padding: 25px; /* Increased padding */
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.app-sidebar h2 {
+  font-size: 15px; /* Slightly larger heading */
+  color: #6c757d; /* Softer heading color */
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px; /* Increased margin */
+  letter-spacing: 0.5px; /* Subtle letter spacing */
+}
+
+.app-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-sidebar ul li {
+  padding: 12px 18px; /* Increased padding */
+  margin-bottom: 8px; /* Increased spacing */
+  border-radius: 6px; /* More rounded list items */
+  cursor: pointer;
+  background-color: #e2f4ff; /* Lighter blue for default state */
+  color: #007bff;
+  font-weight: 500; /* Slightly bolder */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.app-sidebar .community-post {
+  display: flex;
+  gap: 12px; /* Increased gap */
+  margin-top: 25px; /* Increased margin */
+  background-color: #f1f3f5; /* Softer background */
+  padding: 15px; /* Increased padding */
+  border-radius: 8px; /* More rounded */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.04); /* Softer inner shadow */
+}
+
+.app-sidebar .community-post .avatar {
+  border-radius: 50%;
+  width: 35px; /* Slightly larger avatar */
+  height: 35px;
+  object-fit: cover;
+}
+
+.app-sidebar .community-post p {
+  margin: 0 0 4px 0; /* Adjusted margin */
+  font-size: 13.5px; /* Adjusted font size */
+  color: #343a40; /* Darker text for readability */
+}
+.app-sidebar .community-post small {
+    color: #868e96; /* Softer timestamp color */
+    font-size: 11.5px; /* Smaller timestamp */
+}
+
+.app-sidebar .community-post .post-actions {
+  display: flex;
+  gap: 18px; /* Adjusted gap */
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px; /* Adjusted margin */
+}
+
+/* Styling for active chatroom in sidebar */
+.app-sidebar ul li.active-chatroom {
+  background-color: #007bff; /* Keeps vibrant blue for active */
+  color: white;
+  font-weight: 600; /* Stronger bold */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* More prominent shadow */
+}
+
+/* Ensure hover effect still works on non-active items */
+.app-sidebar ul li:not(.active-chatroom):hover {
+    background-color: #dbeaff; /* Slightly darker light blue on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* --- Dashboard Main Content Styles --- */
+.app-dashboard-main {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* More prominent shadow */
+}
+
+.app-dashboard-main h1 {
+    font-size: 32px; /* Larger welcome heading */
+    margin-top: 0;
+    margin-bottom: 20px; /* Increased margin */
+    color: #343a40; /* Consistent dark text */
+    font-weight: 700;
+}
+
+.app-dashboard-main button {
+    background-color: #28a745; /* Green button for action */
+    color: white;
+    padding: 12px 25px; /* Larger padding */
+    border: none;
+    border-radius: 6px; /* More rounded */
+    cursor: pointer;
+    font-size: 17px; /* Slightly larger font */
+    margin-bottom: 40px; /* Increased margin */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.app-dashboard-main button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+.app-dashboard-main .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger min-width for cards */
+    gap: 25px; /* Increased gap */
+}
+
+.app-dashboard-main .card {
+    background-color: #fefefe; /* Closer to white for cards */
+    padding: 25px; /* Increased padding */
+    border-radius: 10px; /* More rounded corners */
+    border: 1px solid #e0e0e0; /* Softer border */
+    min-height: 180px; /* Increased min height for content */
+    display: flex;
+    flex-direction: column; /* Allows content to stack */
+    align-items: flex-start; /* Align content to start */
+    justify-content: flex-start; /* Align content to start */
+    font-size: 18px;
+    font-weight: 600;
+    color: #495057; /* Softer card text color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Softer shadow for cards */
+}
+
+/* --- Mood Summary Card Specific Styles --- */
+.mood-summary-card h3 {
+  margin-top: 0;
+  color: #343a40; /* Consistent heading color */
+  font-size: 20px; /* Slightly larger heading */
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.mood-summary-card p {
+  margin-bottom: 15px; /* Increased margin */
+  color: #6c757d; /* Softer text color */
+  font-size: 15px;
+}
+
+.mood-emoticons {
+  display: flex;
+  justify-content: space-between; /* Adjusted to space-between for wider spread */
+  gap: 10px; /* Gap between emojis */
+  margin-bottom: 25px; /* Increased margin */
+  font-size: 32px; /* Slightly larger emojis */
+  width: 100%; /* Ensure it takes full width for space-between */
+}
+
+.mood-emoticons span {
+  cursor: pointer;
+  padding: 8px 10px; /* Increased padding */
+  border-radius: 8px; /* More rounded */
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+  flex-shrink: 0; /* Prevent shrinking on small screens */
+}
+
+.mood-emoticons span:hover {
+  background-color: #e9ecef; /* Softer hover effect */
+  transform: translateY(-2px) scale(1.05); /* More noticeable lift and slight enlarge */
+}
+
+.mood-graph-placeholder {
+  background-color: #f0f8ff; /* Very light, calming blue */
+  border: 1px dashed #cfe2ff; /* Softer dashed border */
+  height: 120px; /* Increased placeholder height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4dabf7; /* Softer blue text */
+  font-style: italic;
+  font-size: 15px;
+  border-radius: 8px; /* More rounded */
+  width: 100%; /* Ensure it fills card width */
+}
+
+/* Styling for selected mood emoticon */
+.mood-emoticons .selected-mood {
+  background-color: #d0ebff; /* Softer blue for selection */
+  border: 1px solid #74c0fc; /* Softer blue border */
+  transform: scale(1.1); /* Keep enlarge */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Add a subtle shadow */
+}
+
+/* --- Recent Journal Entries Card Specific Styles --- */
+.recent-journal-entries-card h3 {
+  margin-top: 0;
+  color: #343a40; /* Consistent heading color */
+  font-size: 20px; /* Slightly larger heading */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.journal-prompts {
+    width: 100%; /* Ensure prompts take full width of card */
+}
+
+.journal-prompts .prompt-item {
+  background-color: #f8f9fa; /* Even lighter grey background for prompts */
+  padding: 12px 18px; /* Increased padding */
+  border-radius: 8px; /* More rounded */
+  margin-bottom: 10px;
+  font-size: 15px; /* Slightly larger font */
+  color: #495057; /* Softer text color */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+  border: 1px solid #e9ecef; /* Subtle border */
+}
+
+.journal-prompts .prompt-item:hover {
+  background-color: #e2e4e7; /* Darker on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- Community Feed Card (Main Dashboard) Specific Styles --- */
+.community-feed-card-main h3 {
+  margin-top: 0;
+  color: #343a40; /* Consistent heading color */
+  font-size: 20px; /* Slightly larger heading */
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.main-community-post {
+  background-color: #ffffff; /* White background for posts */
+  border: 1px solid #e0e0e0; /* Softer border */
+  border-radius: 10px; /* More rounded */
+  padding: 20px; /* Increased padding */
+  margin-bottom: 20px; /* Increased margin */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04); /* Softer shadow */
+}
+
+.main-community-post .post-header {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increased gap */
+  margin-bottom: 12px; /* Adjusted margin */
+}
+
+.main-community-post .avatar {
+  border-radius: 50%;
+  width: 45px; /* Larger avatar */
+  height: 45px;
+  object-fit: cover;
+  border: 2px solid #ced4da; /* Subtle border around avatar */
+}
+
+.main-community-post .post-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-community-post .post-author {
+  font-weight: 600; /* Bolder author name */
+  color: #343a40; /* Darker for readability */
+  font-size: 16px; /* Slightly larger */
+}
+
+.main-community-post .post-time {
+  font-size: 12.5px; /* Adjusted font size */
+  color: #868e96; /* Softer timestamp color */
+}
+
+.main-community-post .post-content {
+  font-size: 15px; /* Slightly larger content text */
+  line-height: 1.7; /* Increased line height for readability */
+  color: #495057; /* Softer content color */
+  margin-bottom: 18px; /* Adjusted margin */
+}
+
+.main-community-post .post-actions-main {
+  display: flex;
+  gap: 25px; /* Increased gap */
+  font-size: 14px; /* Slightly larger font */
+  color: #6c757d; /* Softer action text color */
+  cursor: pointer;
+}
+
+.main-community-post .post-actions-main span:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.community-feed-card-main > p { /* Target "View All Posts" specifically */
+    text-align: center;
+    margin-top: 25px;
+    color: #007bff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.community-feed-card-main > p:hover {
+    color: #0056b3;
+}
+
+
+/* --- AI Therapy Companion Card Specific Styles --- */
+.ai-therapy-companion-card h3 {
+  margin-top: 0;
+  color: #343a40; /* Consistent heading color */
+  font-size: 20px; /* Slightly larger heading */
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.ai-therapy-companion-card p {
+    color: #6c757d; /* Softer text color */
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.ai-chat-input {
+  width: calc(100% - 24px); /* Adjust for padding and border */
+  padding: 12px; /* Increased padding */
+  margin-bottom: 15px;
+  border: 1px solid #ced4da; /* Softer border */
+  border-radius: 8px; /* More rounded */
+  font-size: 15px; /* Slightly larger font */
+  resize: vertical;
+  box-sizing: border-box;
+  background-color: #f8f9fa; /* Lighter input background */
+  color: #343a40;
+}
+
+.ai-chat-input::placeholder {
+  color: #adb5bd; /* Softer placeholder color */
+}
+
+.send-message-button {
+  background-color: #28a745; /* Consistent green button */
+  color: white;
+  padding: 12px 20px; /* Larger padding */
+  border: none;
+  border-radius: 6px; /* More rounded */
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.send-message-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-1px);
+}
+
+/* --- SHARED STYLES FOR INLINE SVG ICONS --- */
+.action-icon {
+  vertical-align: middle;
+  margin-right: 8px; /* Slightly increased margin for better spacing */
+  width: 20px;    /* Slightly larger icons */
+  height: 20px;   /* Slightly larger icons */
+  fill: #6c757d;  /* Softer icon color */
+  transition: fill 0.3s ease; /* Smooth color transition */
+}
+
+/* Ensure the action text itself aligns with the icon and has subtle color */
+.post-actions span,
+.post-actions-main span {
+    display: inline-flex;
+    align-items: center;
+    color: #6c757d; /* Softer general color for action text */
+    font-size: 15px; /* Slightly larger font size for action text */
+    transition: color 0.3s ease; /* Smooth color transition for text */
+}
+
+.post-actions span:hover .action-icon,
+.post-actions-main span:hover .action-icon {
+    fill: #007bff; /* Change icon color on hover */
+}
+
+.post-actions span:hover,
+.post-actions-main span:hover {
+    color: #007bff; /* Change text color on hover */
+}
